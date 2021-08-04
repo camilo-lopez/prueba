@@ -28,7 +28,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag prueba:$(date +%s) 
-    - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
+    - uses: camilo-lopez/prueba # This is the action
       with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: "prueba-camilo-lopez" #Must be unique in Heroku
