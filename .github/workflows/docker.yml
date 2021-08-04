@@ -11,7 +11,7 @@ jobs:
     name: build and push image
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout
+    - uses: actions/checkout@v2
     - name: build and push to docker
       uses: docker/prueba@v1
       with:
