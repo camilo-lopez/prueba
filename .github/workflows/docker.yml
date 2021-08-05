@@ -19,7 +19,7 @@ jobs:
         tags: ${{ github.sha }}
 
   build:
-    name: Build, Push and Release a Docker container to Heroku. # Your custom step name
+      name: Build, Push and Release a Docker container to Heroku. # Your custom step name
       runs-on: ubuntu-latest
       needs: build-and-push
       uses: gonuit/heroku-docker-deploy@v1.3.3 # GitHub action name (leave it as it is).
