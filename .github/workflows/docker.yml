@@ -21,13 +21,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     needs: build-and-push
-    steps:
-    - uses: actions/checkout@main
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag prueba:$(date +%s) 
-    - uses: camilo-lopez/prueba@v2 # This is the action
+  - name: Build, Push and Release a Docker container to Heroku. # Your custom step name
+      uses: gonuit/heroku-docker-deploy@v1.3.3 # GitHub action name (leave it as it is).
       with:
-          ref: main
-          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-          heroku_app_name: "prueba-camilo-lopez" #Must be unique in Heroku
-          heroku_email: ${{secrets.HEROKU_EMAIL}} 
+        email: ${{ secrets.HEROKU_EMAIL }}
+        heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
+        heroku_app_name: "prueba-camilo-lopez"
+          
+          
