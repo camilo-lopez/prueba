@@ -35,6 +35,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+        needs: push_to_registry
       - name: Checkout
         uses: actions/checkout@v2
       - name: Build, Push and Deploy to Heroku # set whatever name you want to this step
