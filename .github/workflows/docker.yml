@@ -36,10 +36,11 @@ jobs:
     needs: push_to_registry
     steps:
     - name: deploy to heroku
-      uses: gonuit/heroku-docker-deploy@v1.3.3 # GitHub action name (leave it as it is).
+      uses: gonuit/heroku-docker-deploy@v1.3.3 
       with:
         email: ${{ secrets.HEROKU_EMAIL }}
         heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
         heroku_app_name: "prueba-camilo-lopez"
+        dockerfile_directory: "ls"
         
           
